@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.responses import JSONResponse
 
 app = FastAPI()
@@ -10,5 +10,7 @@ def health() -> dict[str, str]:
 
 
 @app.post("/checkout")
-def checkout() -> dict[str, str]:
+def checkout(idempotency_key: str | None = Header(default=None)) -> dict[str, str]:
+    if not idempotency_key:
+        raise HTTPException(status_code=400, detail="Idempotency-Key header required")
     return {"order_id": "TEST-001"}
