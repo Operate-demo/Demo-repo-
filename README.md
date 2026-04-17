@@ -20,3 +20,14 @@ A tiny example service used to demonstrate Operate integrations.
 ## Environment
 
 Copy `.env.example` to `.env` and fill in the required values.
+
+Connected to operate
+
+## API
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/health` | Returns service health status. Responds with `{"status": "ok"}` when the service is running. |
+| `POST` | `/checkout` | Creates a new order and returns the generated order ID. |
+
+Licensed under MIT.
