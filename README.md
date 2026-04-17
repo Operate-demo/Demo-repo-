@@ -22,3 +22,5 @@ A tiny example service used to demonstrate Operate integrations.
 Copy `.env.example` to `.env` and fill in the required values.
 
 Connected to operate
+
+Licensed under MIT.
